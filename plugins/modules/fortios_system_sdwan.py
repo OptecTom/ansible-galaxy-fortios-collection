@@ -591,14 +591,8 @@ options:
                         type: str
                     member:
                         description:
-                            - Member sequence number list. Source system.sdwan.members.seq-num.
-                        type: list
-                        elements: dict
-                        suboptions:
-                            seq_num:
-                                description:
-                                    - Member sequence number. Source system.sdwan.members.seq-num.
-                                type: int
+                            - Member sequence number list. Source system.sdwan.members.
+                        type: int
                     minimum_sla_meet_members:
                         description:
                             - Minimum number of members which meet SLA when the neighbor is preferred.
@@ -1221,9 +1215,7 @@ EXAMPLES = """
          -
             health_check: "<your_own_value> (source system.sdwan.health-check.name)"
             ip: "<your_own_value> (source router.bgp.neighbor.ip)"
-            member:
-             -
-                seq_num: "0"
+            member: "0"
             minimum_sla_meet_members: "1"
             mode: "sla"
             role: "standalone"
@@ -4320,30 +4312,6 @@ versioned_schema = {
                     "type": "string",
                 },
                 "member": {
-                    "type": "list",
-                    "elements": "dict",
-                    "children": {
-                        "seq_num": {
-                            "revisions": {
-                                "v7.2.2": True,
-                                "v7.2.1": True,
-                                "v7.2.0": True,
-                                "v7.0.8": False,
-                                "v7.0.7": False,
-                                "v7.0.6": False,
-                                "v7.0.5": False,
-                                "v7.0.4": False,
-                                "v7.0.3": False,
-                                "v7.0.2": False,
-                                "v7.0.1": False,
-                                "v7.0.0": False,
-                                "v6.4.4": False,
-                                "v6.4.1": False,
-                                "v6.4.0": False,
-                            },
-                            "type": "integer",
-                        }
-                    },
                     "revisions": {
                         "v7.2.2": True,
                         "v7.2.1": True,
@@ -4361,6 +4329,7 @@ versioned_schema = {
                         "v6.4.1": True,
                         "v6.4.0": True,
                     },
+                    "type": "integer",
                 },
                 "minimum_sla_meet_members": {
                     "revisions": {
